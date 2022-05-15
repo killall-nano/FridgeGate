@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{product.name}}{% endblock %}
+{% block content %}
+
+<div class="container text-center my-4 text-primary">
+<h1 class="border-bottom border-primary pb-2">{{product.name}}</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <img src="{% if product.image %}{{product.image.url}}{% else %}{% static 'img/barner-1.jpg' %}{% endif %}" class="card-img" alt="{{product.name}} image">
+        </div>
+        <div class="col-md-7">
+            <h2 class="card-header text-success">Category: {{ product.category }}</h2>
+            <div class="card-body">
+                {{ product.description|linebreaks }}               
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

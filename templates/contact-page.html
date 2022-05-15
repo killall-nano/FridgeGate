@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="display-3 mt-5 text-primary px-4 font-weight-bold text-center">Send Feedback</h1>
+    <p class="p-4 text-center">Feedback you leave will help us identify areas to improve on, incase of any complain you can also drop it here our team will get to it as soon as posible.</p>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Full name:</label>
+                    <input class="form-control" type="text" name="name" id="name" required>
+                    <small class="text-muted">Provide your full name in the field above</small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="email" name="email" id="email" required>
+                    <small class="text-muted">Provide a valid email address, it might be used to reach out to your.</small>
+                </div>
+                <div class="form-group">
+                    <label for="feedback">Feedback</label>
+                    <textarea class="form-control" required name="feedback" id="feedback" cols="" rows="7"></textarea>
+                    <small class="text-muted">Enter the feedback in the field above</small>
+                </div>
+                <button class="btn btn-primary my-2 px-4" type="submit">Send</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <h3 class="text-primary font-weight-bold">Contact Information</h3>
+
+            <p>Fridgegate International Limited</p>
+            <p>P.O. Box 466 – 00204</p>
+            <p>Athi Rive, Kenya</p>
+            <p>Kevin Muriuki – Managing Director</p>
+            <p><a href="tel:+254715555602">+254 715 555 602</a></p>
+            <p><a href="mailto:kevin.muriuki@fridgegate.co.ke">kevin.muriuki@fridgegate.co.ke</a></p>
+            
+            <h3 class="text-primary font-weight-bold">General Queries:</h3>
+
+            <p><a href="mailto:queries@fridgegate.co.ke">queries@fridgegate.co.ke</a></p>
+
+            <h3 class="text-primary font-weight-bold">Physical Location</h3>
+
+            <p>Export Processing Zone Authority</p>
+            <p>Athi River, Kenya</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid border-top border-primary border-2 mt-4 bg-light">
+    <div class="d-flex align-items-center" style="justify-content: space-between;">
+        <h2 class="my-4 text-primary font-weight-bold">Location</h2>
+        <p>Export Processing Zone Authority - Athi River, Kenya</p>
+    </div>
+    <iframe class="col-lg-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4990.824010214869!2d36.97156731532304!3d-1.4704096362708567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f9f013c227051%3A0x54f5f21d9f693805!2sExport%20Processing%20Zones%20Authority!5e1!3m2!1sen!2ske!4v1652524007567!5m2!1sen!2ske" width="" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+{% endblock content %}

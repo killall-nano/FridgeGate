@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Products{% endblock %}
+{% block content %}
+<div class="container-fluid text-uppercase border-bottom py-4 border-primary">
+  <h2 class="mt-2 text-primary text-center font-weight-bold">
+      {% if category %}
+        Products in {{ category.name }} category
+      {% else %}
+        All Products
+      {% endif %}
+  </h2>
+</div>
+
+{% if products %}
+<div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-2">
+            <ul style="list-style: none;">
+                <a {% if not category %} class="bg-primary nav-link my-3 text-white" {% else %} class="border border-primary nav-link my-3" {% endif %} href="{% url 'product-list' %}">
+                    <li>All Products</li>
+                </a>
+                {% for c in categories %}
+                <a {% if category == c %} class="bg-primary nav-link my-3 text-white" {% else %} class="border border-primary nav-link my-3" {% endif %} href="{{ c.get_absolute_url }}">
+                    <li>{{ c.name }}</li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                {% for product in products %}
+                <div class="card shadow m-2" style="max-width: 270px;">
+                    <h6 class="card-header text-center text-dark">{{product.name}}</h6>
+                    <img src="{% if product.image %}{{product.image.url}}{% else %}{% static 'img/barner-1.jpg' %}{% endif %}" class="card-img" alt="{{product.name}} image">
+                    <div class="card-body">
+                        <small class="text-success">Category: {{product.category}}</small>
+                        <div class="row align-items-center" style="justify-content: space-between;">
+                            <a href="{{ product.get_absolute_url }}" class="btn btn-primary btn-sm my-3">Read More</a>
+                            <small>5 Review</small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="text-center text-danger py-5">
+    <h1>No product found in category <b>{{category.name}}</b></h1>
+    <p>We supply all major brands and cover a whole spectrum of products</p>
+</div>
+{% endif %}
+
+{% endblock %}
