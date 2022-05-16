@@ -2,32 +2,34 @@
 {% load static %}
 {% block title %}About Us{% endblock %}
 {% block content %}
-<div class="container">
-    <div class="col-xl-12 text-center my-5">
-        <h1 class="display-2 text-primary">About FridgeGate</h1>
+<div class="container-fluid" style="background-image: url('/static/img/barner-1.jpg');background-repeat:no-repeat; background-size:cover;">
+    <div class="row align-items-center font-weight-bold" style="min-height: 90vh;">
+        <div class="col-xl-12 text-center my-5">
+            <h1 class="display-3 font-weight-bold text-uppercase text-white">About FridgeGate</h1>
+        </div>
     </div>
 </div>
-<div class="container-fluid bg-primary text-white py-4">
+<div class="container-fluid py-4">
     <div class="row align-items-center justify-content-center" style="min-height: 70vh;">
         <div class="col-md-3">
-            <img src="{% static 'img/FRIDGEGATE-logo-white.png' %}" alt="Logo" title="FridgeGate" class="img-fluid">
+            <img src="{% static 'img/FRIDGEGATE logo.png' %}" alt="Logo" title="FridgeGate" class="img-fluid">
         </div>
         <div class="col-md-6 px-4">
-            <h1 class="my-3">What is FridgeGate?</h1>
+            <h1 class="my-4 text-primary text-uppercase">What is FridgeGate?</h1>
             <p>
                 Fridgegate International Limited is a general merchandise & trading company incorporated under the Companies Act of Kenya, 2015 vide registration PVT-PJUYAY3B. Our primary focus is to support organizations’ business operations in order to allow them to focus on their core mandate.                
             </p>
-            <h1 class="my-3">What do we supply?</h1>
+            <h1 class="my-4 text-primary text-uppercase">What do we supply?</h1>
             <p>We supply general office supplies, specialty building materials and manufacturing ingredients for industrial conversion. Upon request, we also outsource quality business services that meet our diverse customer demands. We are a customer centric company meaning we provide products and services within the context of good time, quality and cost.</p>
             <p>Our customer base cuts across all sectors and industries nationally. We serve public, corporate entities, manufacturing companies, construction firms and various other existing business operations.</p>
         </div>
     </div>
 </div>
-<div class="container-fluid bg-light">
-    <div class="row text-center justify-content-center align-items-center py-5" style="min-height: 40vh;">
-        <div class="col-sm-5">
-            <p style="font-size: 1.7em;">For more queries reach us out through the email provided below</p>
-            <a class="nav-link" href="mailto:queries@fridgegate.co.ke">queries@fridgegate.co.ke</a>
+<div class="container-fluid text-white" style="background-image: url('/static/img/barner-1.jpg');background-repeat:no-repeat; background-size:cover;">
+    <div class="row text-center justify-content-center align-items-center py-5" style="min-height: 50vh;">
+        <div class="col-md-6 border-bottom border-top py-5">
+            <p style="font-size: 1.8em;" class="font-weight-bold">For more queries reach us out through the email provided below</p>
+            <a class="nav-link text-white" href="mailto:queries@fridgegate.co.ke">queries@fridgegate.co.ke</a>
         </div>
     </div>
 </div>
